@@ -6,8 +6,8 @@ This project is a RESTful API built with Flask and Flask-RESTful. It provides en
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
-   cd flask-restful-api
+   git clone https://github.com/HectorDelgadoR/ppt-challenge.git
+   cd ppt-challenge
    ```
 
 2. Create a virtual environment:
