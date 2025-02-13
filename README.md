@@ -2,24 +2,6 @@
 
 This project is a RESTful API built with Flask and Flask-RESTful. It provides endpoints for managing programs, drugs, and other related entities.
 
-## Project Structure
-
-```
-flask-restful-api
-├── app
-│   ├── __init__.py
-│   ├── routes.py
-│   ├── models.py
-│   └── resources
-│       └── example_resource.py
-├── tests
-│   ├── __init__.py
-│   └── test_example.py
-├── requirements.txt
-├── config.py
-└── README.md
-```
-
 ## Installation
 
 1. Clone the repository:
