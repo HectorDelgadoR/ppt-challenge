@@ -103,7 +103,7 @@ Each program can be created just for 1 time, if you want to flush the db you can
 }
 ```
 
-## How to run the API 
+## How to run the API (programs by id)
 
 You can use cURL executing the following command:
 
@@ -192,4 +192,93 @@ or just opening `http://127.0.0.1:5000/api/programs/11757` in your browser
 {
     "error": "Program with ID 11756 not found"
 }
+```
+
+## How to run the API (programs by query params)
+
+You can use the following cURL:
+
+```
+curl --location 'http://127.0.0.1:5000/api/programs?program_type=Coupon&coverage_eligibilities=Commercially%20insured'
+```
+
+You can filter by `program_type` and `coverage_eligibilities`.
+
+### Sample success API response with elements:
+
+```
+[
+    {
+        "benefits": [
+            {
+                "name": "max_annual_savings",
+                "value": "13000.0"
+            },
+            {
+                "name": "min_out_of_pocket",
+                "value": "0.0"
+            }
+        ],
+        "coverage_eligibilities": [
+            "Commercially insured"
+        ],
+        "details": [
+            {
+                "eligibility": "Patient must have commercial insurance, including health insurance exchanges, federal employee plans, or state employee plans",
+                "income": "Not required",
+                "program_detail": "Eligible patients may pay as little as $0 for every month of Dupixent",
+                "renewal": "Patient will be automatically re-enrolled every January 1st provided that their card has been used within 18 months"
+            }
+        ],
+        "drugs": [
+            {
+                "name": "Dupixent"
+            },
+            {
+                "name": "Dupixent Pen"
+            }
+        ],
+        "expiration_date": "\"\"",
+        "forms": [
+            {
+                "link": "https://www.dupixent.com/support-savings/copay-card",
+                "name": "Enrollment Form"
+            }
+        ],
+        "free_trial_offer": "false",
+        "funding": {
+            "current_funding_level": "Data Not Available",
+            "evergreen": "true"
+        },
+        "help_line": "844-387-4936",
+        "id": 11757,
+        "last_updated": "01/07/2025",
+        "program_name": "Dupixent MyWay Copay Card",
+        "program_type": "Coupon",
+        "requirements": [
+            {
+                "name": "minimum_age",
+                "value": "18"
+            },
+            {
+                "name": "insurance_coverage",
+                "value": "true"
+            },
+            {
+                "name": "us_residency",
+                "value": "true"
+            },
+            {
+                "name": "eligibility_length",
+                "value": "12m"
+            }
+        ]
+    }
+]
+```
+
+### Sample success API response empty list:
+
+```
+[]
 ```
